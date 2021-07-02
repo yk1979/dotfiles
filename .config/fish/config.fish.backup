@@ -1,0 +1,13 @@
+set -U fish_user_paths /usr/local/bin
+set -U fish_user_paths $HOME/.nodenv/bin
+status --is-interactive; and source (nodenv init -|psub)
+alias pbc="pbcopy < ~/.ssh/id_rsa.pub"
+alias jpq="jpegoptim --strip-all --max=80"
+alias pq="pngquant --ext .png --force --speed 1"
+alias gcm="git checkout master"
+alias gcd="git checkout develop"
+alias gcr="git checkout release"
+alias gpm="git pull origin master"
+alias gpd="git pull origin develop"
+alias nrd="npm run dev"
+alias nin="npm install --no-save"
