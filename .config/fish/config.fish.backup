@@ -1,13 +1,27 @@
+eval (nodenv init)
+eval (rbenv init)
+pyenv init - | source
 set -U fish_user_paths /usr/local/bin
 set -U fish_user_paths $HOME/.nodenv/bin
 status --is-interactive; and source (nodenv init -|psub)
+status --is-interactive; and source (rbenv init -|psub)
+status is-interactive; and pyenv init --path | source
+alias python="python3" 
+alias pip="pip3"
+alias nr="npm run"
+alias nrd="npm run dev"
+alias nrb="npm run build"
 alias pbc="pbcopy < ~/.ssh/id_rsa.pub"
 alias jpq="jpegoptim --strip-all --max=80"
 alias pq="pngquant --ext .png --force --speed 1"
-alias gcm="git checkout master"
-alias gcd="git checkout develop"
-alias gcr="git checkout release"
-alias gpm="git pull origin master"
-alias gpd="git pull origin develop"
-alias nrd="npm run dev"
-alias nin="npm install --no-save"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gcod="git checkout develop"
+alias gcor="git checkout release"
+alias gcob="git checkout -b"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gpuo="git branch --show-current | xargs git push -u origin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/01029262/google-cloud-sdk/path.fish.inc' ]; . '/Users/01029262/google-cloud-sdk/path.fish.inc'; end
